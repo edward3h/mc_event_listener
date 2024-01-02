@@ -19,7 +19,7 @@ public interface EventDAO extends Transactional<EventDAO> {
             """)
     boolean insertLocation(@Bind String world, @BindMethods PlayerUpdate playerUpdate);
 
-    record LocationDTO(String world, String player, String dimension, double x, double y, double z){}
+    record LocationDTO(String world, String player, Dimension dimension, double x, double y, double z){}
 
     @SqlQuery(
             // language=sql

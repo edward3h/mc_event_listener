@@ -3,6 +3,7 @@ package org.ethelred.minecraft.events;
 import io.avaje.inject.test.InjectTest;
 import jakarta.inject.Inject;
 import org.jdbi.v3.core.Jdbi;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -15,14 +16,13 @@ public class EventDAOTest {
     @Inject
     EventDAO eventDAO;
 
+    @BeforeEach
     public void cleanUp() {
         jdbi.useHandle(handle -> handle.createUpdate("delete from location").execute());
     }
 
     @Test
     public void testDAO() {
-        cleanUp();
-
         var success = eventDAO.insertLocation("My World", new PlayerUpdate("Steve", "ignore", Dimension.overworld, new Vector3(1, 2,3)));
         assertThat(success).isTrue();
 
@@ -36,5 +36,6 @@ public class EventDAOTest {
         locations = eventDAO.findLatestLocations();
         assertThat(locations).hasSize(2)
                 .extracting(EventDAO.LocationDTO::player).contains("Alex", "Steve");
+        assertThat(locations.get(0).dimension()).isEqualTo(Dimension.overworld);
     }
 }
