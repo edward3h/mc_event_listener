@@ -1,0 +1,31 @@
+
+[versions]
+avaje-inject = "9.10"
+avaje-http = "2.0"
+avaje-jsonb = "1.9"
+jdbi = "3.42.0"
+
+[libraries]
+avaje-inject = { module="io.avaje:avaje-inject", version.ref="avaje-inject"}
+avaje-inject-processor = { module="io.avaje:avaje-inject-generator", version.ref="avaje-inject"}
+avaje-inject-test = { module="io.avaje:avaje-inject-test", version.ref="avaje-inject"}
+avaje-http = {module="io.avaje:avaje-http-api", version.ref="avaje-http"}
+avaje-http-processor = {module="io.avaje:avaje-http-javalin-generator", version.ref="avaje-http"}
+avaje-jsonb = {module="io.avaje:avaje-jsonb", version.ref="avaje-jsonb"}
+avaje-jsonb-processor = {module="io.avaje:avaje-jsonb-generator", version.ref="avaje-jsonb"}
+avaje-config = "io.avaje:avaje-config:3.10"
+javalin = "io.javalin:javalin:5.6.3"
+
+slf4j = "org.slf4j:slf4j-api:2.0.7"
+logevents = "org.logevents:logevents:0.5.2"
+
+jdbi-core = {module="org.jdbi:jdbi3-core", version.ref="jdbi"}
+jdbi-sqlobject = {module="org.jdbi:jdbi3-sqlobject", version.ref="jdbi"}
+jdbi-sqlite = {module="org.jdbi:jdbi3-sqlite", version.ref="jdbi"}
+jdbi-processor = {module="org.jdbi:jdbi3-generator", version.ref="jdbi"}
+
+sqlite = "org.xerial:sqlite-jdbc:3.44.1.0"
+liquibase = "org.liquibase:liquibase-core:4.25.1"
+
+[bundles]
+jdbi = ["jdbi-core", "jdbi-sqlite", "jdbi-sqlobject"]
