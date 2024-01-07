@@ -13,6 +13,7 @@ dependencies {
     annotationProcessor(libs.avaje.http.processor)
     annotationProcessor(libs.avaje.jsonb.processor)
     annotationProcessor(libs.jdbi.processor)
+    annotationProcessor(libs.jstachio.processor)
     implementation(libs.avaje.inject)
     implementation(libs.avaje.http)
     implementation(libs.avaje.jsonb)
@@ -23,6 +24,7 @@ dependencies {
     implementation(libs.sqlite)
     implementation(libs.liquibase)
     implementation(libs.slf4j)
+    implementation(libs.jstachio.compile)
 
     testAnnotationProcessor(libs.avaje.inject.processor)
     testImplementation(libs.avaje.inject.test)
@@ -52,4 +54,13 @@ application {
 
 tasks.withType<JavaCompile>().configureEach {
     options.compilerArgs.add("-parameters")
+    options.compilerArgs.add("--enable-preview")
+}
+
+tasks.withType<JavaExec>().configureEach {
+    args("--enable-preview")
+}
+
+tasks.withType<Test>().configureEach {
+    jvmArgs("--enable-preview")
 }

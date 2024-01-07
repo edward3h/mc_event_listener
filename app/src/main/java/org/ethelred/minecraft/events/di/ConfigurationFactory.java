@@ -1,4 +1,4 @@
-package org.ethelred.minecraft.events;
+package org.ethelred.minecraft.events.di;
 
 import io.avaje.config.Config;
 import io.avaje.config.Configuration;

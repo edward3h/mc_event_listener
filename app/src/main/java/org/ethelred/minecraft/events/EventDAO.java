@@ -1,5 +1,11 @@
 package org.ethelred.minecraft.events;
 
+import org.ethelred.minecraft.events.model.Dimension;
+import org.ethelred.minecraft.events.model.Location;
+import org.ethelred.minecraft.events.model.Player;
+import org.ethelred.minecraft.events.model.PlayerUpdate;
+import org.ethelred.minecraft.events.model.Vector3;
+import org.ethelred.minecraft.events.model.World;
 import org.jdbi.v3.sqlobject.GenerateSqlObject;
 import org.jdbi.v3.sqlobject.config.RegisterConstructorMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
@@ -9,6 +15,9 @@ import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 import org.jdbi.v3.sqlobject.transaction.Transactional;
 
 import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 @GenerateSqlObject
 public interface EventDAO extends Transactional<EventDAO> {
@@ -31,6 +40,18 @@ public interface EventDAO extends Transactional<EventDAO> {
             """
     )
     @RegisterConstructorMapper(LocationDTO.class)
-    List<LocationDTO> findLatestLocations();
+    List<LocationDTO> findLatestLocationRows();
 
+    default SortedSet<World> findLatestLocations() {
+        return findLatestLocationRows()
+                .stream()
+
+                .collect(Collectors.groupingBy(LocationDTO::world,
+                        Collectors.mapping(l -> new Player(l.player, new Location(l.dimension, new Vector3(l.x,l.y,l.z))),
+                                Collectors.toCollection(TreeSet::new))))
+                .entrySet()
+                .stream()
+                .map(e -> new World(e.getKey(), e.getValue()))
+                .collect(Collectors.toCollection(TreeSet::new));
+    }
 }

@@ -4,6 +4,7 @@ import io.avaje.http.api.Controller;
 import io.avaje.http.api.Get;
 import io.avaje.http.api.Post;
 import jakarta.inject.Inject;
+import org.ethelred.minecraft.events.model.EventUpdate;
 
 @Controller("/api/event")
 public class EventController {
@@ -16,7 +17,10 @@ public class EventController {
 
     @Post
     public void eventUpdate(EventUpdate update) {
-
+        eventDAO.begin();
+        update.players()
+                .forEach(p -> eventDAO.insertLocation(update.world(), p));
+        eventDAO.commit();
     }
 
     @Get

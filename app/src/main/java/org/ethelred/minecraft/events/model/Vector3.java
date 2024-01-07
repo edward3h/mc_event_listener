@@ -1,4 +1,4 @@
-package org.ethelred.minecraft.events;
+package org.ethelred.minecraft.events.model;
 
 import io.avaje.jsonb.Json;
 

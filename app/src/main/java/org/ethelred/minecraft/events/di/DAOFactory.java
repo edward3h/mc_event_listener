@@ -1,16 +1,14 @@
-package org.ethelred.minecraft.events;
+package org.ethelred.minecraft.events.di;
 
 import io.avaje.config.Configuration;
 import io.avaje.inject.Bean;
 import io.avaje.inject.Factory;
 import liquibase.Liquibase;
-import liquibase.database.Database;
-import liquibase.database.DatabaseConnection;
 import liquibase.database.DatabaseFactory;
 import liquibase.database.jvm.JdbcConnection;
-import liquibase.exception.DatabaseException;
 import liquibase.exception.LiquibaseException;
 import liquibase.resource.ClassLoaderResourceAccessor;
+import org.ethelred.minecraft.events.EventDAO;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 import org.slf4j.Logger;
