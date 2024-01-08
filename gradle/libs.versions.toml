@@ -20,7 +20,7 @@ javalin = "io.javalin:javalin:5.6.3"
 jstachio-processor = {module="io.jstach:jstachio-apt", version.ref="jstachio"}
 jstachio-compile = {module="io.jstach:jstachio", version.ref="jstachio"}
 
-slf4j = "org.slf4j:slf4j-api:2.0.10"
+slf4j = "org.slf4j:slf4j-api:2.0.11"
 logevents = "org.logevents:logevents:0.5.2"
 
 jdbi-core = {module="org.jdbi:jdbi3-core", version.ref="jdbi"}
