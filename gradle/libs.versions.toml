@@ -12,6 +12,7 @@ avaje-inject-processor = { module="io.avaje:avaje-inject-generator", version.ref
 avaje-inject-test = { module="io.avaje:avaje-inject-test", version.ref="avaje-inject"}
 avaje-http = {module="io.avaje:avaje-http-api", version.ref="avaje-http"}
 avaje-http-processor = {module="io.avaje:avaje-http-javalin-generator", version.ref="avaje-http"}
+avaje-http-client = { module="io.avaje:avaje-http-client", version.ref="avaje-http"}
 avaje-jsonb = {module="io.avaje:avaje-jsonb", version.ref="avaje-jsonb"}
 avaje-jsonb-processor = {module="io.avaje:avaje-jsonb-generator", version.ref="avaje-jsonb"}
 avaje-config = "io.avaje:avaje-config:3.10"

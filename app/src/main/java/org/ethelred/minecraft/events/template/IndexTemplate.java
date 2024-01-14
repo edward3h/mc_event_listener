@@ -20,7 +20,7 @@ import java.util.SortedSet;
 <p>No location data.</p>
 {{/worlds}}
 {{#worlds}}
-<h2>{{name}}</h2>
+<h2>World: {{name}}</h2>
 <ul>
 {{#players}}
 <li><strong>{{name}}</strong> - {{lastLocation.dimension}} {{#coords}}{{/coords}}</li>

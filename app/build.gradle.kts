@@ -28,7 +28,10 @@ dependencies {
 
     testAnnotationProcessor(libs.avaje.inject.processor)
     testImplementation(libs.avaje.inject.test)
+    testImplementation(libs.avaje.http.client)
     testImplementation("org.assertj:assertj-core:3.25.1")
+    testImplementation("org.jsoup:jsoup:1.17.2")
+
 }
 
 testing {
