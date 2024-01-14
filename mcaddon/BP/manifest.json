@@ -1,0 +1,67 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"edward3h"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.7.8"
+			],
+			"dash": [
+				"github:bridge-core/dash-compiler#8fa35c73292f6382747d0f411fca26431a6d2c8e"
+			]
+		}
+	},
+	"header": {
+		"name": "Player Location Service",
+		"description": "BDS only. Sends messages to an external server with the players locations.",
+		"min_engine_version": [
+			1,
+			20,
+			40
+		],
+		"uuid": "e10bcac2-929d-40f7-8703-50e387109dbe",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "3131aa4b-828c-44d3-bd92-e89effb68126",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "759d269d-c396-49e0-b64f-24404e85f3a1",
+			"entry": "scripts/player_loc_main.js",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.9.0-beta"
+		},
+		{
+			"module_name": "@minecraft/server-admin",
+			"version": "1.0.0-beta"
+		},
+		{
+			"module_name": "@minecraft/server-net",
+			"version": "1.0.0-beta"
+		}
+	]
+}
