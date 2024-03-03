@@ -15,7 +15,7 @@ avaje-http-processor = {module="io.avaje:avaje-http-javalin-generator", version.
 avaje-http-client = { module="io.avaje:avaje-http-client", version.ref="avaje-http"}
 avaje-jsonb = {module="io.avaje:avaje-jsonb", version.ref="avaje-jsonb"}
 avaje-jsonb-processor = {module="io.avaje:avaje-jsonb-generator", version.ref="avaje-jsonb"}
-avaje-config = "io.avaje:avaje-config:3.11"
+avaje-config = "io.avaje:avaje-config:3.12"
 javalin = "io.javalin:javalin:5.6.4"
 
 jstachio-processor = {module="io.jstach:jstachio-apt", version.ref="jstachio"}
