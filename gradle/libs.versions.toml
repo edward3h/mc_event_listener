@@ -4,7 +4,7 @@ avaje-inject = "9.11"
 avaje-http = "2.2"
 avaje-jsonb = "1.10"
 jdbi = "3.45.0"
-jstachio = "1.3.4"
+jstachio = "1.3.5"
 
 [libraries]
 avaje-inject = { module="io.avaje:avaje-inject", version.ref="avaje-inject"}
