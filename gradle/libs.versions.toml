@@ -1,6 +1,6 @@
 
 [versions]
-avaje-inject = "9.11"
+avaje-inject = "9.12"
 avaje-http = "2.4"
 avaje-jsonb = "1.10"
 jdbi = "3.45.1"
