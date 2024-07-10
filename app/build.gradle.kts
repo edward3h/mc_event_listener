@@ -30,7 +30,7 @@ dependencies {
     testImplementation(libs.avaje.inject.test)
     testImplementation(libs.avaje.http.client)
     testImplementation("org.assertj:assertj-core:3.26.3")
-    testImplementation("org.jsoup:jsoup:1.17.2")
+    testImplementation("org.jsoup:jsoup:1.18.1")
 
 }
 
