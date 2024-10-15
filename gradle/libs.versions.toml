@@ -3,7 +3,7 @@
 avaje-inject = "9.12"
 avaje-http = "2.7"
 avaje-jsonb = "1.12"
-jdbi = "3.45.4"
+jdbi = "3.46.0"
 jstachio = "1.3.6"
 
 [libraries]
