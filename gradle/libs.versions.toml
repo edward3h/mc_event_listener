@@ -30,7 +30,7 @@ jdbi-sqlite = {module="org.jdbi:jdbi3-sqlite", version.ref="jdbi"}
 jdbi-processor = {module="org.jdbi:jdbi3-generator", version.ref="jdbi"}
 
 sqlite = "org.xerial:sqlite-jdbc:3.47.0.0"
-liquibase = "org.liquibase:liquibase-core:4.29.2"
+liquibase = "org.liquibase:liquibase-core:4.30.0"
 
 [bundles]
 jdbi = ["jdbi-core", "jdbi-sqlite", "jdbi-sqlobject"]
